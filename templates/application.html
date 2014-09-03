@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Rushee Application{% endblock %}
+
+{% block content %}
+
+<a href="/logout"><span id="logoutbtn">Logout</span></a>
+
+<div class="application_form">
+    <h2>Rushee Application</h2>
+    <form action="/application/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save" />
+    </form>
+
+</div>
+
+{% endblock %}
