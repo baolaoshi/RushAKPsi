@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Rushees{% endblock %}
+
+{% block content %}
+<ul>
+	{% for rushee in rushees %}
+	<li><a href="/rushee/{{ rushee.id }}">{{ rushee.first_name }} {{ rushee.last_name }}</a></li>
+	{% endfor %}
+</ul>
+{% endblock %}

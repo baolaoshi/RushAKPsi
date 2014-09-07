@@ -36,7 +36,7 @@ class Rushee(models.Model):
 	dorm = models.CharField(max_length=40, blank=True, null=True)
 	grad_class = models.CharField(max_length=4, blank=True, null=True)
 	major = models.CharField(max_length=100, blank=True, null=True)
-	gpa = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
+	gpa = models.CharField(max_length=100, blank=True, null=True)
 	picture = models.ImageField(upload_to="rushpics", blank=True, null=True)
 	resume = ContentTypeRestrictedFileField(upload_to="rushresumes", 
 		  								    content_types=['application/pdf'],
