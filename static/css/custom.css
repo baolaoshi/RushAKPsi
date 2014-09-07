@@ -182,3 +182,12 @@ textarea {
 	cursor: pointer;
 }
 
+.signup {
+	margin-top: 200px;
+}
+
+.signup-title {
+	text-transform: uppercase;
+	color: #262646;
+}
+

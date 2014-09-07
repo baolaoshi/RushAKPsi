@@ -3,12 +3,51 @@
 {% block title %}Sign up{% endblock %}
 
 {% block content %}
-<div class="signup_form">
-    <h2>Register</h2>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Sign up" />
-    </form>
+
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="sidebar">
+			<img src="/static/images/logo.png" width="150">
+			<div class="sidebar-info">
+				<span class="sidebar-info-title">Application Deadline</span>
+				<br><br>
+				<span class="sidebar-info-title">Questions?</span>
+				<span class="sidebar-info-text">Contact your AKPsi Rep or <a href="mailto:nlam@andrew.cmu.edu" target="_top">Nicholas Lam.</a></span>
+			</div>
+			<div class="sidebar-sponsor">
+				<img src="/static/images/BNY_logo.png" width="150">
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3 col-md-offset-1">
+		<div class="signup">
+			<h1 class="signup-title">
+				Rush
+			</h1>
+			<h3 class="signup-subtitle">
+				Alpha Kappa Psi
+			</h3>
+			<div class="signup-area">
+				<div class="signup_form">
+				    <form action="" method="post">
+				        {% csrf_token %}
+				        {% for field in form %}
+				        	{{field}}
+				        {% endfor %}
+				        <button type="submit" value="Submit" class="signup-btn btn-block">Sign Up</button>
+				    </form>
+				</div>
+				<script type="text/javascript">
+					$('#id_password1').addClass('signup-field');
+					$('#id_password2').addClass('signup-field');
+					$('#id_password1').attr("placeholder", "Password")
+					$('#id_password2').attr("placeholder", "Re-type Password")
+				</script>
+			</div>
+		</div>
+	</div>
 </div>
+
+
 {% endblock %}

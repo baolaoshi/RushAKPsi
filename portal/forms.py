@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from portal.models import *
 
 class NewUserForm(UserCreationForm):
-	username = forms.CharField(label="Email")
+	username = forms.CharField(label="Email", widget=forms.TextInput(attrs={'placeholder': 'Email', 'class': 'signup-field'}))
 
 	class Meta:
  		model = User
@@ -29,5 +29,5 @@ class NewRusheeForm(forms.Form):
 	resume = forms.FileField(required=False, widget=forms.FileInput(attrs={'class': 'custom-file-input'}))
 
 class LoginForm(forms.Form):
-    username = forms.CharField(label="Email")
-    password = forms.CharField(widget=forms.PasswordInput())
+    username = forms.CharField(label="Email", widget=forms.TextInput(attrs={'placeholder': 'Email', 'class': 'signup-field'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password', 'class': 'signup-field'}))

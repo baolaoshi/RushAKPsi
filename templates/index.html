@@ -2,6 +2,36 @@
 {% block title %}Alpha Kappa Psi Fall Rush{% endblock %}
 
 {% block content %}
-<a href="/login">Login</a>
-<a href="/signup">Sign up</a>
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="sidebar">
+			<img src="/static/images/logo.png" width="150">
+			<div class="sidebar-info">
+				<span class="sidebar-info-title">Application Deadline</span>
+				<br><br>
+				<span class="sidebar-info-title">Questions?</span>
+				<span class="sidebar-info-text">Contact your AKPsi Rep or <a href="mailto:nlam@andrew.cmu.edu" target="_top">Nicholas Lam.</a></span>
+			</div>
+			<div class="sidebar-sponsor">
+				<img src="/static/images/BNY_logo.png" width="150">
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3 col-md-offset-1">
+		<div class="signup">
+			<h1 class="signup-title">
+				Rush
+			</h1>
+			<h3 class="signup-subtitle">
+				Alpha Kappa Psi
+			</h3>
+			<div class="signup-area">
+				<a href="/login"><div class="signup-btn">Log In</div></a>
+				<a><div class="title"><span>Or</span></div></a>
+				<a href="/signup"><div class="signup-btn">Sign Up</div></a>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}
