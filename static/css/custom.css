@@ -4,13 +4,23 @@ body {
     background: url("/static/images/background.png") no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
+    font-family: 'Source Sans Pro';
+
 }  
+
+ @font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlPytCVloACqnDHJwh-em2k8.woff2) format('woff2');
+}
+
 
 .app-form {
 	border-top-style: solid;
 	border-color: #fde57d;
 	border-width: 20px;
-	margin-top: 40px;
+	margin-top: 80px;
 }
 
 .app-form h2 {
@@ -25,6 +35,76 @@ body {
 	margin-bottom: 20px;
 	padding-bottom: 40px;
 	background-color: #fff;
+}
+
+.sidebar {
+	margin-top: 80px;
+	position: fixed;
+
+}
+
+.sidebar-info {
+	margin-top: 30px;
+	padding-left: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	background-color: #fde57d;
+	width: 150px;
+	color: #262646;
+
+}
+
+.sidebar-info-title {
+	text-transform: uppercase;
+	font-weight: 700;
+	
+}
+
+.sidebar-info-text {
+	font-size: 12px;
+}
+
+.sidebar-info-text a {
+	font-size: 12px;
+}
+
+.sidebar-sponsor {
+	margin-top: 30px;
+}
+
+.login-btn {
+	margin-top: 30px;
+	padding-left: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-transform: uppercase;
+	background-color: #fde57d;
+	outline: none;
+	border: 0px;
+	width: 150px;
+	font-weight: 700;
+
+}
+
+a {
+	color: #262646;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #262646;
+	text-decoration: none;
+}
+
+.login-btn:hover {
+	background-color: #B7A65A;
+	cursor: pointer;
+}
+
+.login-btn a:hover {
+	text-decoration: none;
+	cursor: pointer;
 }
 
 textarea {
@@ -96,3 +176,9 @@ textarea {
 	outline: none;
 	border: 0px;
 }
+
+.submit-btn:hover {
+	background-color: #B7A65A;
+	cursor: pointer;
+}
+
