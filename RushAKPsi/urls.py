@@ -3,6 +3,8 @@ from RushAKPsi import settings
 from django.conf.urls.static import static
 
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.conf import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -13,8 +15,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'', include('portal.urls')),
-) 
-
+)  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += patterns('',
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
