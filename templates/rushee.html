@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ rushee.first_name }} {{ rushee.last_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ rushee.first_name }} {{ rushee.last_name }}</h1>
+<img src="/media/{{ rushee.picture }}" />
+<p>Phone number: {{ rushee.phone_num }}</p>
+<p>Dorm: {{ rushee.dorm }}</p>
+<p>Graduating Class: {{ rushee.grad_class }}</p>
+<p>Major: {{ rushee.major }}</p>
+<p>GPA: {{ rushee.gpa }}</p>
+<p>Describe your business interests.</p>
+<p>{{ rushee.q1 }}</p>
+<p>Describe something meaningful you took away from a recruitment event or an interaction with a brother that makes you want to be a part of Alpha Kappa Psi.</p>
+<p>{{ rushee.q2 }}</p>
+<p>What specifically do you hope to gain from membership in Alpha Kappa Psi?</p>
+<p>{{ rushee.q3 }}</p>
+<p>Anything else you'd like to add? This is to be used if there is anything else you would like to tell us that we have not asked you about on the application. If you believe that there is some fact, experience, talent, thought, or whatever which just did not seem to fit into our application but which you would like us to take into consideration, let us know about it here. (Optional)</p>
+<p>{{ rushee.q4 }}</p>
+<h2>Resume</h2>
+<iframe src="http://docs.google.com/gview?url=http://www.rushakpsi.com/media/{{ rushee.resume }}" 
+style="width:600px; height:500px;" frameborder="0"></iframe>
+{% endblock %}

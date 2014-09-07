@@ -85,7 +85,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Directory for templates
 
-TEMPLATE_DIRS = os.path.join(BASE_DIR, 'templates')
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'), )
 
 # Directory for uploaded files
 

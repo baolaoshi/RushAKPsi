@@ -51,7 +51,9 @@ def application_view(request):
 										  'q4' : rushee.q4})
 	else:
 		rushee = Rushee.objects.get(user=request.user)
-		form = NewRusheeForm(initial={'phone_num' : rushee.phone_num,
+		form = NewRusheeForm(initial={'first_name' : rushee.first_name, 
+									  'last_name' : rushee.last_name,
+									  'phone_num' : rushee.phone_num,
 									  'dorm' : rushee.dorm,
 									  'grad_class' : rushee.grad_class,
 									  'major' : rushee.major,
@@ -108,3 +110,13 @@ def gallery_view(request):
 	data = {}
 	data['rushees'] = Rushee.objects.all()
 	return render(request, 'gallery.html', data)
+
+def logout_view(request):
+	logout(request)
+	return HttpResponseRedirect('/')
+
+@user_passes_test(lambda u: u.is_superuser)
+def rushee_view(request, rushee_id):
+	data = {}
+	data['rushee'] = Rushee.objects.get(id=rushee_id)
+	return render(request, 'rushee.html', data)
