@@ -63,8 +63,16 @@
 			        			<div class="col-md-2 col-md-offset-2">
 			        				<span class="resume-label">{{ form.resume.label_tag }}</span>
 			        			</div>
-			        			<div class="col-md-8">
+			        			<div class="col-md-4">
 			        				{{ form.resume }}
+			        			</div>
+			        			<div class="col-md-2">
+			        				<script>
+			        					$("input[name='attachment[]']").each(function() {
+			        					    var fileName = $(this).val().split('/').pop().split('\\').pop();
+			        					    console.log(fileName);
+			        					});
+			        				</script>
 			        			</div>
 			        		</div>
 		        		</div>

@@ -1,0 +1,184 @@
+body { 
+    height: 100%;
+    margin:0px;
+    background: url("/static/images/background.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Source Sans Pro';
+
+}  
+
+ @font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlPytCVloACqnDHJwh-em2k8.woff2) format('woff2');
+}
+
+
+.app-form {
+	border-top-style: solid;
+	border-color: #fde57d;
+	border-width: 20px;
+	margin-top: 80px;
+}
+
+.app-form h2 {
+	text-align: center;
+	margin-top: 0px;
+	padding-top: 25px;
+	margin-bottom: 25px;
+	text-transform: uppercase;
+}
+
+.app-body {
+	margin-bottom: 20px;
+	padding-bottom: 40px;
+	background-color: #fff;
+}
+
+.sidebar {
+	margin-top: 80px;
+	position: fixed;
+
+}
+
+.sidebar-info {
+	margin-top: 30px;
+	padding-left: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	background-color: #fde57d;
+	width: 150px;
+	color: #262646;
+
+}
+
+.sidebar-info-title {
+	text-transform: uppercase;
+	font-weight: 700;
+	
+}
+
+.sidebar-info-text {
+	font-size: 12px;
+}
+
+.sidebar-info-text a {
+	font-size: 12px;
+}
+
+.sidebar-sponsor {
+	margin-top: 30px;
+}
+
+.login-btn {
+	margin-top: 30px;
+	padding-left: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-transform: uppercase;
+	background-color: #fde57d;
+	outline: none;
+	border: 0px;
+	width: 150px;
+	font-weight: 700;
+
+}
+
+a {
+	color: #262646;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #262646;
+	text-decoration: none;
+}
+
+.login-btn:hover {
+	background-color: #B7A65A;
+	cursor: pointer;
+}
+
+.login-btn a:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+  width: 100%;
+}
+
+
+.questions-long {
+	margin-top: 25px;
+}
+
+.question-long {
+	margin-bottom: 15px;
+}
+
+.question-primary {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.question-title {
+	text-transform: uppercase;
+}
+
+.resume {
+	margin-top: 10px;
+}
+
+.resume-label {
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: '+ Add New File';
+  text-transform: uppercase;
+  display: inline-block;
+  background: #a23b3a;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10pt;
+  color: #fff;
+}
+.custom-file-input:hover::before {
+  background-color:  #752A2A;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.save-area {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.submit-btn {
+	font-weight: 700;
+	font-size: 14pt;
+	text-transform: uppercase;
+	background-color: #fde57d;
+	color: #262646;
+	outline: none;
+	border: 0px;
+}
+
+.submit-btn:hover {
+	background-color: #B7A65A;
+	cursor: pointer;
+}
+
