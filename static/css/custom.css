@@ -1,0 +1,98 @@
+body { 
+    height: 100%;
+    margin:0px;
+    background: url("/static/images/background.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}  
+
+.app-form {
+	border-top-style: solid;
+	border-color: #fde57d;
+	border-width: 20px;
+	margin-top: 40px;
+}
+
+.app-form h2 {
+	text-align: center;
+	margin-top: 0px;
+	padding-top: 25px;
+	margin-bottom: 25px;
+	text-transform: uppercase;
+}
+
+.app-body {
+	margin-bottom: 20px;
+	padding-bottom: 40px;
+	background-color: #fff;
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+  width: 100%;
+}
+
+
+.questions-long {
+	margin-top: 25px;
+}
+
+.question-long {
+	margin-bottom: 15px;
+}
+
+.question-primary {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.question-title {
+	text-transform: uppercase;
+}
+
+.resume {
+	margin-top: 10px;
+}
+
+.resume-label {
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: '+ Add New File';
+  text-transform: uppercase;
+  display: inline-block;
+  background: #a23b3a;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10pt;
+  color: #fff;
+}
+.custom-file-input:hover::before {
+  background-color:  #752A2A;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+.save-area {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.submit-btn {
+	font-weight: 700;
+	font-size: 14pt;
+	text-transform: uppercase;
+	background-color: #fde57d;
+	color: #262646;
+	outline: none;
+	border: 0px;
+}
