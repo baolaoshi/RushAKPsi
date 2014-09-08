@@ -24,7 +24,7 @@ h3 {
 }
 
 a {
-	color: ##262646 !important ;
+	color: #2a3855 !important ;
 }
 
 .app-form {
@@ -79,7 +79,7 @@ a {
 	padding-right: 10px;
 	background-color: #fde57d;
 	width: 150px;
-	color: #262646;
+	color: #2a3855;
 
 }
 
@@ -116,12 +116,12 @@ a {
 }
 
 a {
-	color: #262646;
+	color: #2a3855;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #262646;
+	color: #2a3855;
 	text-decoration: none;
 }
 
@@ -261,7 +261,7 @@ textarea {
 	font-size: 12pt;
 	text-transform: uppercase;
 	background-color: #fde57d;
-	color: #262646;
+	color: #2a3855;
 	outline: none;
 	border: 0px;
 	padding-top: 12px;
@@ -272,12 +272,12 @@ textarea {
 
 .signup-btn a:focus {
 	text-decoration: none !important;
-	color: #262646 !important;
+	color: #2a3855 !important;
 }
 
 .signup-btn a:hover {
 	text-decoration: none !important;
-	color: #262646 !important;
+	color: #2a3855 !important;
 }
 
 .signup-btn:hover {
@@ -334,7 +334,7 @@ textarea {
 	font-size: 14pt;
 	text-transform: uppercase;
 	background-color: #fde57d;
-	color: #262646;
+	color: #2a3855;
 	outline: none;
 	border: 0px;
 	padding-top: 15px;
