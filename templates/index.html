@@ -4,20 +4,7 @@
 {% block content %}
 
 <div class="row">
-	<div class="col-md-3">
-		<div class="sidebar">
-			<img src="/static/images/logo.png" width="150">
-			<div class="sidebar-info">
-				<span class="sidebar-info-title">Application Deadline</span>
-				<br><br>
-				<span class="sidebar-info-title">Questions?</span>
-				<span class="sidebar-info-text">Contact your AKPsi Rep or <a href="mailto:nlam@andrew.cmu.edu" target="_top">Nicholas Lam.</a></span>
-			</div>
-			<div class="sidebar-sponsor">
-				<img src="/static/images/BNY_logo.png" width="150">
-			</div>
-		</div>
-	</div>
+	{% include "sidebar.html" %}
 	<div class="col-md-3 col-md-offset-1">
 		<div class="signup">
 			<h1 class="signup-title">

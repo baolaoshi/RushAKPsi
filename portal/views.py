@@ -63,6 +63,7 @@ def application_view(request):
 									  'q3' : rushee.q3,
 									  'q4' : rushee.q4})	
 	data["form"] = form
+	data["rushee"] = Rushee.objects.get(user=request.user)
 	return render(request, 'application.html', data, context_instance=RequestContext(request))
 
 def login_view(request):

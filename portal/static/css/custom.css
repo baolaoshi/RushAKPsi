@@ -15,12 +15,20 @@ body {
   src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600) format('woff2');
 }
 
+h1 {
+	font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+h3 {
+	font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+a {
+	color: ##262646 !important ;
+}
 
 .app-form {
-	border-top-style: solid;
-	border-color: #fde57d;
-	border-width: 20px;
-	margin-top: 80px;
+	
 }
 
 .app-form h2 {
@@ -31,10 +39,30 @@ body {
 	text-transform: uppercase;
 }
 
+.app-dialogue {
+	border-top-style: solid;
+	border-color: #d5fd7d;
+	border-width: 20px;
+	background-color: #fff;
+	padding: 20px;
+}
+
+.app-dialogue-title {
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
 .app-body {
 	margin-bottom: 20px;
 	padding-bottom: 40px;
 	background-color: #fff;
+	margin-top: 40px;
+	border-top-style: solid;
+	border-color: #fde57d;
+	border-width: 20px;
 }
 
 .sidebar {
@@ -142,6 +170,25 @@ textarea {
 .resume-label {
 	text-transform: uppercase;
 	font-size: 20px;
+}
+
+.file-input {
+	text-transform: uppercase;
+	display: inline-block;
+	background: #a23b3a;
+	padding: 5px 8px;
+	outline: none;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 10pt;
+	color: #fff;
+	border: 0px;
+}
+
+.file-input:hover {
+  background-color:  #752A2A;
 }
 
 .custom-file-input::-webkit-file-upload-button {
@@ -290,7 +337,6 @@ textarea {
 	color: #262646;
 	outline: none;
 	border: 0px;
-	margin-top: 10px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
@@ -298,6 +344,10 @@ textarea {
 .signup-btn:hover {
 	background-color: #B7A65A;
 	cursor: pointer;
+}
+
+.hidden {
+	visibility: hidden;
 }
 
 
