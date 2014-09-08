@@ -57,7 +57,6 @@ def application_view(request, splash=False):
 			rushee.first_name = cd['first_name']
 			rushee.last_name = cd['last_name']
 			rushee.phone_num = cd['phone_num']
-			rushee.dorm = cd['dorm']
 			rushee.grad_class = cd['grad_class']
 			rushee.major = cd['major']
 			rushee.gpa = cd['gpa']
@@ -71,6 +70,7 @@ def application_view(request, splash=False):
 			return application_view(request, splash=True)
 		else:
 			rushee = Rushee.objects.get(user=request.user)
+			data['rushee'] = rushee
 			form = NewRusheeForm(request.POST, request.FILES, 
 								 initial={'phone_num' : rushee.phone_num,
 										  'dorm' : rushee.dorm,
@@ -83,6 +83,7 @@ def application_view(request, splash=False):
 										  'q4' : rushee.q4})
 	else:
 		rushee = Rushee.objects.get(user=request.user)
+		data['rushee'] = rushee
 		form = NewRusheeForm(initial={'first_name' : rushee.first_name, 
 									  'last_name' : rushee.last_name,
 									  'phone_num' : rushee.phone_num,
