@@ -4,21 +4,33 @@ from portal.forms import *
 from django.contrib.auth import authenticate, login, logout
 from portal.models import *
 from django.contrib.auth.decorators import user_passes_test
+from datetime import datetime
 
 # Create your views here.
 
+DUE_DATE = datetime(2014, 9, 14, 18, 0, 0)
+DUE_DATE_STR = DUE_DATE.strftime("%A, <br> %B %d %I:%M%p").lstrip("0").replace(" 0", " ")
+
 def index_view(request):
-	data = {}
+	data = {'DUE_DATE' : DUE_DATE_STR}
+	
+	if request.user.is_authenticated():
+		return HttpResponseRedirect("/application")
+
 	return render(request, 'index.html', data)
 
 def application_view(request, splash=False):
+
+	if datetime.now() > DUE_DATE:
+		return HttpResponseRedirect("/closed")
+
 	if not request.user.is_authenticated():
 		return HttpResponseRedirect("/login")
 
 	if request.user.username == "webmaster":
 		return HttpResponseRedirect("/gallery")
 		
-	data = {}
+	data = {'DUE_DATE' : DUE_DATE_STR}
 
 	if splash:
 		data['splash'] = True
@@ -85,7 +97,7 @@ def application_view(request, splash=False):
 	return render(request, 'application.html', data, context_instance=RequestContext(request))
 
 def login_view(request):
-	data = {}
+	data = {'DUE_DATE' : DUE_DATE_STR}
 	if request.user.is_authenticated():
 		return HttpResponseRedirect("/application")
 	else:
@@ -102,12 +114,15 @@ def login_view(request):
 				else: 
 					data['error'] = "Your email and password don't match!"
 					data['form'] = form
-		else:
-			data['form'] = LoginForm()
+	data['form'] = LoginForm()
 	return render(request,'login.html', data, context_instance=RequestContext(request))
 
 def signup_view(request):
-	data = {}
+
+	if datetime.now() > DUE_DATE:
+		return HttpResponseRedirect("/closed")
+
+	data = {'DUE_DATE' : DUE_DATE_STR}
 	if request.method == 'POST':
 		form = NewUserForm(request.POST)
 		if form.is_valid():
@@ -127,7 +142,7 @@ def signup_view(request):
 
 @user_passes_test(lambda u: u.is_superuser)
 def gallery_view(request):
-	data = {}
+	data = {'DUE_DATE' : DUE_DATE_STR}
 	data['rushees'] = Rushee.objects.all()
 	return render(request, 'gallery.html', data)
 
@@ -137,6 +152,10 @@ def logout_view(request):
 
 @user_passes_test(lambda u: u.is_superuser)
 def rushee_view(request, rushee_id):
-	data = {}
+	data = {'DUE_DATE' : DUE_DATE_STR}
 	data['rushee'] = Rushee.objects.get(id=rushee_id)
 	return render(request, 'rushee.html', data)
+
+def closed_view(request):
+	data = {'DUE_DATE' : DUE_DATE_STR}
+	return render(request, 'closed.html', data)

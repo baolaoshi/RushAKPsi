@@ -10,6 +10,16 @@ def is_andrew_email(value):
 	if not a.match(value):
 		raise ValidationError("Your email must be an Andrew email.")
 
+def is_valid_phone_num(value):
+	a = re.compile("^[0-9]$")
+	if len(value) != 10 or not a.match(value):
+		raise ValidationError("Your phone number must be 10 digits long.")
+
+def is_valid_grad_class(value):
+	a = re.compile("^[0-9]$")
+	if len(value) != 4 or not a.match(value):
+		raise ValidationError("Your graduating class must be 4 digits long.")
+
 class NewUserForm(UserCreationForm):
 	username = forms.CharField(label="Email", widget=forms.TextInput(attrs={'placeholder': 'Email', 'class': 'signup-field'}), 
 								validators=[is_andrew_email])
@@ -31,9 +41,9 @@ class NewRusheeForm(forms.Form):
 	picture = forms.ImageField(required=False)
 	first_name = forms.CharField(required=False, label="First Name", widget=forms.TextInput(attrs={'placeholder': 'First Name', 'class': 'question-primary'}))
 	last_name = forms.CharField(required=False, label="Last Name", widget=forms.TextInput(attrs={'placeholder': 'Last Name', 'class': 'question-primary'}))
-	phone_num = forms.CharField(required=False, label="Phone", widget=forms.TextInput(attrs={'placeholder': 'Phone Number', 'class': 'question-primary'}))
+	phone_num = forms.CharField(required=False, label="Phone", widget=forms.TextInput(attrs={'placeholder': 'Phone Number', 'class': 'question-primary'}), validators=[is_valid_phone_num])
 	dorm = forms.CharField(required=False)
-	grad_class = forms.CharField(required=False, label="Graduation Year", widget=forms.TextInput(attrs={'placeholder': 'Graduation Year', 'class': 'question-primary'}))
+	grad_class = forms.CharField(required=False, label="Graduation Year", widget=forms.TextInput(attrs={'placeholder': 'Graduation Year', 'class': 'question-primary'}), validators=[is_valid_grad_class])
 	major = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': 'Major', 'class': 'question-primary'}))
 	gpa = forms.CharField(required=False, label="Cumulative GPA", widget=forms.TextInput(attrs={'placeholder': 'GPA', 'class': 'question-primary'}))	
 	resume = forms.FileField(required=False, widget=forms.FileInput(attrs={'class': 'custom-file-input'}))

@@ -24,7 +24,11 @@ h3 {
 }
 
 a {
+<<<<<<< HEAD
+	color: ##1892c6 !important ;
+=======
 	color: #2a3855 !important ;
+>>>>>>> e678ae990bea1868f26d6d75360f1f91800201b4
 }
 
 .app-form {
@@ -102,6 +106,7 @@ a {
 }
 
 .login-btn {
+	color: #262646;
 	margin-top: 30px;
 	padding-left: 40px;
 	padding-top: 10px;
@@ -116,7 +121,11 @@ a {
 }
 
 a {
+<<<<<<< HEAD
+	color: #1892c6;
+=======
 	color: #2a3855;
+>>>>>>> e678ae990bea1868f26d6d75360f1f91800201b4
 	text-decoration: none;
 }
 

@@ -4,23 +4,31 @@ body {
     background: url("/static/images/background.png") no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Source Sans Pro';
+    font-family: 'Source Sans Pro', sans-serif !important;
 
 }  
 
  @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: 'Source Sans Pro', sans-serif;
   font-style: normal;
   font-weight: 600;
-  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlPytCVloACqnDHJwh-em2k8.woff2) format('woff2');
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600) format('woff2');
 }
 
+h1 {
+	font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+h3 {
+	font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+a {
+	color: ##1892c6 !important ;
+}
 
 .app-form {
-	border-top-style: solid;
-	border-color: #fde57d;
-	border-width: 20px;
-	margin-top: 80px;
+	
 }
 
 .app-form h2 {
@@ -31,10 +39,30 @@ body {
 	text-transform: uppercase;
 }
 
+.app-dialogue {
+	border-top-style: solid;
+	border-color: #d5fd7d;
+	border-width: 20px;
+	background-color: #fff;
+	padding: 20px;
+}
+
+.app-dialogue-title {
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
 .app-body {
 	margin-bottom: 20px;
 	padding-bottom: 40px;
 	background-color: #fff;
+	margin-top: 40px;
+	border-top-style: solid;
+	border-color: #fde57d;
+	border-width: 20px;
 }
 
 .sidebar {
@@ -97,6 +125,10 @@ a:hover {
 	text-decoration: none;
 }
 
+a:focus {
+	text-decoration: none;
+}
+
 .login-btn:hover {
 	background-color: #B7A65A;
 	cursor: pointer;
@@ -138,6 +170,25 @@ textarea {
 .resume-label {
 	text-transform: uppercase;
 	font-size: 20px;
+}
+
+.file-input {
+	text-transform: uppercase;
+	display: inline-block;
+	background: #a23b3a;
+	padding: 5px 8px;
+	outline: none;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 10pt;
+	color: #fff;
+	border: 0px;
+}
+
+.file-input:hover {
+  background-color:  #752A2A;
 }
 
 .custom-file-input::-webkit-file-upload-button {
@@ -183,11 +234,120 @@ textarea {
 }
 
 .signup {
-	margin-top: 200px;
+	margin-top: 80px;
+	line-height: 1;
 }
 
 .signup-title {
 	text-transform: uppercase;
-	color: #262646;
+	color: #fde57d;
+	font-size: 100pt;
+	text-align: center;
 }
+.signup-subtitle {
+	text-transform: uppercase;
+	color: #fde57d;
+	font-size: 31pt;
+	text-align: center;
+	margin-top: -20px;
+}
+
+.signup-area {
+	margin-top: 20px;
+}
+
+.signup-btn {
+	font-weight: 600;
+	font-size: 12pt;
+	text-transform: uppercase;
+	background-color: #fde57d;
+	color: #262646;
+	outline: none;
+	border: 0px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	width: 100%;
+}
+
+.signup-btn a:focus {
+	text-decoration: none !important;
+	color: #262646 !important;
+}
+
+.signup-btn a:hover {
+	text-decoration: none !important;
+	color: #262646 !important;
+}
+
+.signup-btn:hover {
+	background-color: #B7A65A;
+	text-decoration: none;
+}
+
+
+.title {
+	font-size: 16px;
+	color: #fde57d;
+	text-transform: uppercase;
+	font-style: italic;
+	outline: none;
+	border: 0px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	font-size: 12pt;
+    text-align: center;
+    overflow: hidden;
+    line-height: 2em;
+}
+.title span {
+  display: inline-block;
+  position: relative;
+}
+.title span:before,
+.title span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-top: 1px solid;
+  top: 50%;
+  width: 165px;
+}
+.title span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.title span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+
+.signup-field {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.signup-btn {
+	font-weight: 700;
+	font-size: 14pt;
+	text-transform: uppercase;
+	background-color: #fde57d;
+	color: #262646;
+	outline: none;
+	border: 0px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.signup-btn:hover {
+	background-color: #B7A65A;
+	cursor: pointer;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
 
