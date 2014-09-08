@@ -13,9 +13,11 @@
 				Alpha Kappa Psi
 			</span>
 			<div class="signup-area">
-				<div class="signup-errors">
-					{{ form.errors }}
-				</div>
+				{% if form.errors %}
+					<div class="signup-errors">
+						{{ form.errors }}
+					</div>
+				{% endif %}
 				<div class="signup_form">
 				    <form action="" method="post">
 				        {% csrf_token %}
@@ -23,7 +25,7 @@
 				        	{{field}}
 				        {% endfor %}
 				        {{ error }}
-				        <button type="submit" value="Submit" class="signup-btn btn-block">Log In</button>
+				        <button type="submit" value="Submit" class="entry-btn btn-block">Log In</button>
 				    </form>
 				</div>
 			</div>

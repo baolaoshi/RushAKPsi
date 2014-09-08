@@ -12,12 +12,14 @@
 		<div class="col-md-6">
 			<div class="app-form">
 				{% if form.errors %}
-					<div class="app-dialogue">
+					<div class="app-dialogue-error">
 						<div class="app-dialogue-title">
-							Poooop
+							Plase Correct the Following
 						</div>
 						<div class="app-dialogue-body">
-							You've successfully saved your application. You can make changes up until the deadline (Sunday, September 14 th @ 6pm), at which point your answers will be automatically submitted. Thank you for your interest in Alpha Kappa Psi at Carnegie Mellon.
+							<div class="singup-errors">
+								{{form.errors}}
+							</div>
 						</div>
 					</div>
 				{% endif %}
@@ -27,13 +29,12 @@
 							Save Successful
 						</div>
 						<div class="app-dialogue-body">
-							You've successfully saved your application. You can make changes up until the deadline (Sunday, September 14 th @ 6pm), at which point your answers will be automatically submitted. Thank you for your interest in Alpha Kappa Psi at Carnegie Mellon.
+							You've successfully saved your application. You can make changes up until the deadline (Sunday, September 14th @ 6pm), at which point your answers will be automatically submitted. Thank you for your interest in Alpha Kappa Psi at Carnegie Mellon.
 						</div>
 					</div>
 				{% endif %}
 				<div class="app-body">
 				    <h2 class="text-center">Alpha Kappa Psi Application</h2>
-				    {{ form.errors }}
 				    <form class="form-horizontal" action="/application/" method="post" enctype="multipart/form-data">
 				        {% csrf_token %}
 				        <div class="row">
@@ -66,6 +67,7 @@
 			        			<span class="question-primary"> {{ form.first_name }} </span>
 			        			<span class="question-primary"> {{ form.last_name }} </span>
 			        			<span class="question-primary"> {{ form.phone_num }} </span>
+			        			<span class="question-primary"> {{ form.grad_class}} </span>
 			        			<span class="question-primary"> {{ form.major}} </span>
 			        			<span class="question-primary"> {{ form.gpa }} </span>
 			        		</div>
@@ -92,13 +94,10 @@
 			        				<span class="resume-label">{{ form.resume.label_tag }}</span>
 			        			</div>
 			        			<div class="col-md-3">
-			        				{{ form.resume }}
-			        				<button class="file-input" id="image_alt">+ Add New File</button>
-			        				<script type="text/javascript">
-			        					document.getElementById('image_alt').addEventListener('click',function(){
-			        					    document.getElementById('image').click();
-			        					});
-			        				</script>
+			        				<div class="fileupload">
+			        				  {{ form.resume }}
+			        				  + Add New File
+			        				</div>
 			        			</div>
 			        			<div class="col-md-3">
 			        				<div class="resume-name">
@@ -121,7 +120,7 @@
 	        		<div class="row">
 	        			<div class="col-md-4 col-md-offset-4">
 	        				<div class="save-area">
-	        					<button id="save" type="submit" value="save" data-toggle="modal" data-target=".bs-example-modal-sm" class="signup-btn btn-block">Save</button>
+	        					<button id="save" type="submit" value="save" class="signup-btn btn-block">Save</button>
 	        					<script type="text/javascript">
 	        						// $("#save").click(function() {
 	        						// 	alert("fdjskln");

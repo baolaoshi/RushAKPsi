@@ -14,9 +14,11 @@
 				Alpha Kappa Psi
 			</h3>
 			<div class="signup-area">
-				<div class="signup-errors">
-					{{ form.errors }}
-				</div>
+				{% if form.errors %}
+					<div class="signup-errors">
+						{{ form.errors }}
+					</div>
+				{% endif %}
 				<div class="signup_form">
 				    <form action="" method="post">
 
@@ -25,7 +27,7 @@
 				        	{{field}}
 				        {% endfor %}
 
-				        <button type="submit" value="Submit" class="signup-btn btn-block">Sign Up</button>
+				        <button type="submit" value="Submit" class="entry-btn btn-block">Sign Up</button>
 				    </form>
 				</div>
 					<script type="text/javascript">
