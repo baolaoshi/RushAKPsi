@@ -33,6 +33,7 @@
 				{% endif %}
 				<div class="app-body">
 				    <h2 class="text-center">Alpha Kappa Psi Application</h2>
+				    {{ form.errors }}
 				    <form class="form-horizontal" action="/application/" method="post" enctype="multipart/form-data">
 				        {% csrf_token %}
 				        <div class="row">
