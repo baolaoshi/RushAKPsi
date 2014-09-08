@@ -11,6 +11,7 @@
 	{% include "sidebar.html" %}
 		<div class="col-md-6">
 			<div class="app-form">
+				{% if splash %}
 				<div class="app-dialogue">
 					<div class="app-dialogue-title">
 						Save Successful
@@ -19,13 +20,14 @@
 						You've successfully saved your application. You can make changes up until the deadline (Sunday, September 14 th @ 6pm), at which point your answers will be automatically submitted. Thank you for your interest in Alpha Kappa Psi at Carnegie Mellon.
 					</div>
 				</div>
+				{% endif %}
 				<div class="app-body">
 				    <h2 class="text-center">Alpha Kappa Psi Application</h2>
 				    <form class="form-horizontal" action="/application/" method="post" enctype="multipart/form-data">
 				        {% csrf_token %}
 				        <div class="row">
 							<div class="col-md-4 col-md-offset-2">
-								{% if rushee.picture == "" %}
+								{% if not rushee.picture %}
 									<input  id="pic" type="image" src="/static/images/Face.png" width="210"/>{{ form.picture }}
 								{% else %}
 									<input  id="pic" type="image" src="/media/{{ rushee.picture }}" width="210"/>{{ form.picture }}
@@ -92,12 +94,12 @@
 			        					{{rushee.resume}}
 				        				<script>
 
-				        					// $( "input[name='resume']" ).change(function() {
-				        					// 	console.log("fdjfkjdn")
-				        					// 	pathName = $("input[name='resume']").val();
-				        					// 	fileName = pathName.match(/[^\/\\]+$/);
-				        					//   	$(".resume-name").text(fileName);
-				        					// });
+				        					$( "input[name='resume']" ).change(function() {
+				        						console.log("fdjfkjdn")
+				        						pathName = $("input[name='resume']").val();
+				        						fileName = pathName.match(/[^\/\\]+$/);
+				        					  	$(".resume-name").text(fileName);
+				        					});
 
 				        				</script>
 				        			</div>
