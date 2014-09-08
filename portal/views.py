@@ -71,7 +71,8 @@ def application_view(request, splash=False):
 			return application_view(request, splash=True)
 		else:
 			rushee = Rushee.objects.get(user=request.user)
-			form = NewRusheeForm(initial={'phone_num' : rushee.phone_num,
+			form = NewRusheeForm(request.POST, request.FILES, 
+								 initial={'phone_num' : rushee.phone_num,
 										  'dorm' : rushee.dorm,
 										  'grad_class' : rushee.grad_class,
 										  'major' : rushee.major,
