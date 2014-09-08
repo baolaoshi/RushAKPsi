@@ -13,6 +13,9 @@
 				Alpha Kappa Psi
 			</span>
 			<div class="signup-area">
+				<div class="signup-errors">
+					{{ form.errors }}
+				</div>
 				<div class="signup_form">
 				    <form action="" method="post">
 				        {% csrf_token %}
