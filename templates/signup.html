@@ -14,22 +14,28 @@
 				Alpha Kappa Psi
 			</h3>
 			<div class="signup-area">
+				<div class="signup-errors">
+					{{ form.errors }}
+				</div>
 				<div class="signup_form">
 				    <form action="" method="post">
+
 				        {% csrf_token %}
 				        {% for field in form %}
 				        	{{field}}
 				        {% endfor %}
-				        {{ form.errors }}
+
 				        <button type="submit" value="Submit" class="signup-btn btn-block">Sign Up</button>
 				    </form>
 				</div>
-				<script type="text/javascript">
-					$('#id_password1').addClass('signup-field');
-					$('#id_password2').addClass('signup-field');
-					$('#id_password1').attr("placeholder", "Password")
-					$('#id_password2').attr("placeholder", "Re-type Password")
-				</script>
+					<script type="text/javascript">
+					$( ".signup-btn btn-block" ).click(function() {
+						// $( ".signup-errors" ).change(function() {
+						//   alert( "Handler for .change() called." );
+						// });
+						alert( "Handler for .change() called." );
+					});
+					</script>
 			</div>
 		</div>
 	</div>

@@ -114,8 +114,7 @@ def login_view(request):
 				else: 
 					data['error'] = "Your email and password don't match!"
 					data['form'] = form
-		else:
-			data['form'] = LoginForm()
+	data['form'] = LoginForm()
 	return render(request,'login.html', data, context_instance=RequestContext(request))
 
 def signup_view(request):

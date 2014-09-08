@@ -24,7 +24,11 @@ h3 {
 }
 
 a {
+<<<<<<< HEAD
 	color: ##1892c6 !important ;
+=======
+	color: #2a3855 !important ;
+>>>>>>> e678ae990bea1868f26d6d75360f1f91800201b4
 }
 
 .app-form {
@@ -79,7 +83,7 @@ a {
 	padding-right: 10px;
 	background-color: #fde57d;
 	width: 150px;
-	color: #262646;
+	color: #2a3855;
 
 }
 
@@ -117,12 +121,16 @@ a {
 }
 
 a {
+<<<<<<< HEAD
 	color: #1892c6;
+=======
+	color: #2a3855;
+>>>>>>> e678ae990bea1868f26d6d75360f1f91800201b4
 	text-decoration: none;
 }
 
 a:hover {
-	color: #262646;
+	color: #2a3855;
 	text-decoration: none;
 }
 
@@ -262,7 +270,7 @@ textarea {
 	font-size: 12pt;
 	text-transform: uppercase;
 	background-color: #fde57d;
-	color: #262646;
+	color: #2a3855;
 	outline: none;
 	border: 0px;
 	padding-top: 12px;
@@ -273,17 +281,29 @@ textarea {
 
 .signup-btn a:focus {
 	text-decoration: none !important;
-	color: #262646 !important;
+	color: #2a3855 !important;
 }
 
 .signup-btn a:hover {
 	text-decoration: none !important;
-	color: #262646 !important;
+	color: #2a3855 !important;
 }
 
 .signup-btn:hover {
 	background-color: #B7A65A;
 	text-decoration: none;
+}
+
+.signup-errors {
+	background-color: #fff;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 20px;
+	border-color: #fda57d;
+	border-width: 10px;
+	border-top-style: solid;
 }
 
 
@@ -335,7 +355,7 @@ textarea {
 	font-size: 14pt;
 	text-transform: uppercase;
 	background-color: #fde57d;
-	color: #262646;
+	color: #2a3855;
 	outline: none;
 	border: 0px;
 	padding-top: 15px;
@@ -349,6 +369,21 @@ textarea {
 
 .hidden {
 	visibility: hidden;
+}
+
+.errorlist {
+	list-style-type: none;
+	padding-left: 10px;
+	text-align: left;
+	text-transform: uppercase;
+	font-weight: 900;
+	
+}
+
+.errorlist ul {
+	padding-left: 0px;
+	text-transform: none;
+	font-weight: 500;
 }
 
 
