@@ -23,14 +23,6 @@ h3 {
 	font-family: 'Source Sans Pro', sans-serif !important;
 }
 
-a {
-<<<<<<< HEAD
-	color: ##1892c6 !important ;
-=======
-	color: #2a3855 !important ;
->>>>>>> e678ae990bea1868f26d6d75360f1f91800201b4
-}
-
 .app-form {
 	
 }
@@ -121,11 +113,7 @@ a {
 }
 
 a {
-<<<<<<< HEAD
 	color: #1892c6;
-=======
-	color: #2a3855;
->>>>>>> e678ae990bea1868f26d6d75360f1f91800201b4
 	text-decoration: none;
 }
 

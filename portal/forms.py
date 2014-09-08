@@ -7,16 +7,17 @@ from django.core.exceptions import ValidationError
 
 def is_andrew_email(value):
 	a = re.compile("^[a-zA-Z0-9._%+-]+@andrew.cmu.edu$")
-	if not a.match(value):
+	a2 = re.compile("^[a-zA-Z0-9._%+-]+@cmu.edu$")
+	if not (a.match(value) or a2.match(value)):
 		raise ValidationError("Your email must be an Andrew email.")
 
 def is_valid_phone_num(value):
-	a = re.compile("^[0-9]$")
+	a = re.compile("^[0-9]")
 	if len(value) != 10 or not a.match(value):
 		raise ValidationError("Your phone number must be 10 digits long.")
 
 def is_valid_grad_class(value):
-	a = re.compile("^[0-9]$")
+	a = re.compile("^[0-9]")
 	if len(value) != 4 or not a.match(value):
 		raise ValidationError("Your graduating class must be 4 digits long.")
 
