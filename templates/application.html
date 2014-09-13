@@ -107,10 +107,12 @@
 				        				}
 				        				counter.text(remLength + " characters remaining");
 				        			}
+				        			$(document).ready(function() {
 				        			q1.keypress(updateCounter(q1, c1));
 				        			q2.keypress(updateCounter(q2, c2));
 				        			q3.keypress(updateCounter(q3, c3));
-				        			q4.keypress(updateCounter(q4, c4));	
+				        			q4.keypress(updateCounter(q4, c4));
+				        			});	
 				        			</script>
 				        		</div>
 				        	</div>
