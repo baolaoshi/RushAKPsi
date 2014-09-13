@@ -56,6 +56,6 @@ class Rushee(models.Model):
 	def complete(self):
 		if (self.user and self.first_name and self.last_name and self.phone_num and self.grad_class
 			and self.major and self.gpa and self.picture and self.resume and self.q1 and self.q2
-			and self.q3 and self.q4):
+			and self.q3):
 			return true
 		return false
