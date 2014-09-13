@@ -11,11 +11,6 @@ from datetime import datetime
 DUE_DATE = datetime(2014, 9, 14, 18, 0, 0)
 DUE_DATE_STR = DUE_DATE.strftime("%A, <br> %B %d %I:%M%p").lstrip("0").replace(" 0", " ")
 
-form_questions = ["Why do you want to be a member of Alpha Kappa Psi?",
-				  "Describe something meaningful you took away from a recruitment event or an interaction with a brother that makes you want to be a part of Alpha Kappa Psi.",
-				  "What is your business interest and what have you done so far to further that interest?",
-				  "(Optional) If there is additional information that you would like to share with us, please include it here- interesting facts, miscellaneous thoughts, experiences, or talents are welcome.", ]
-
 def index_view(request):
 	data = {'DUE_DATE' : DUE_DATE_STR}
 	

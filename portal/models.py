@@ -50,8 +50,12 @@ class Rushee(models.Model):
 	q3 = models.TextField(blank=True, null=True)
 	q4 = models.TextField(blank=True, null=True)
 
+	def __str__(self):
+		return (self.user.username).encode('utf-8')
+
 	def complete(self):
-		if (self.user and self.first_name and self.last_name and self.phone_num and self.dorm and self.grad_class
-			and self.major and self.gpa and self.picture and self.resume):
+		if (self.user and self.first_name and self.last_name and self.phone_num and self.grad_class
+			and self.major and self.gpa and self.picture and self.resume and self.q1 and self.q2
+			and self.q3 and self.q4):
 			return true
 		return false
