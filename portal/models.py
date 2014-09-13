@@ -49,3 +49,9 @@ class Rushee(models.Model):
 	q2 = models.TextField(blank=True, null=True)
 	q3 = models.TextField(blank=True, null=True)
 	q4 = models.TextField(blank=True, null=True)
+
+	def complete(self):
+		if (self.user and self.first_name and self.last_name and self.phone_num and self.dorm and self.grad_class
+			and self.major and self.gpa and self.picture and self.resume)
+			return true
+		return false
