@@ -3,9 +3,17 @@
 {% block title %}Rushees{% endblock %}
 
 {% block content %}
-<ul>
-	{% for rushee in rushees %}
-	<li><a href="/rushee/{{ rushee.id }}">{{ rushee.first_name }} {{ rushee.last_name }}</a></li>
-	{% endfor %}
-</ul>
+{% include "sidebar.html" %}
+<div class="col-md-6 col-md-offset-1">
+	<div class="app-form">
+		<div class="app-body">
+			<h2 class="text-center">Rushees</h2>
+			<ul>
+				{% for rushee in rushees %}
+				<li><a href="/rushee/{{ rushee.id }}">{{ rushee.first_name }} {{ rushee.last_name }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
 {% endblock %}

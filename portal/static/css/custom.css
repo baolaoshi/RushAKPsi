@@ -43,6 +43,14 @@ h3 {
 	padding: 20px;
 }
 
+.app-dialogue-error {
+	border-top-style: solid;
+	border-color: #fda57d;
+	border-width: 20px;
+	background-color: #fff;
+	padding: 20px;
+}
+
 .app-dialogue-title {
 	text-transform: uppercase;
 	font-weight: 800;
@@ -153,7 +161,7 @@ textarea {
 
 .question-primary {
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 11px;
 }
 
 .question-title {
@@ -162,6 +170,10 @@ textarea {
 
 .resume {
 	margin-top: 10px;
+}
+
+.resume-name {
+	overflow: scroll;
 }
 
 .resume-label {
@@ -261,6 +273,21 @@ textarea {
 	color: #2a3855;
 	outline: none;
 	border: 0px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	width: 100%;
+}
+
+.entry-btn {
+	font-weight: 600;
+	font-size: 12pt;
+	text-transform: uppercase;
+	background-color: #fde57d;
+	color: #2a3855;
+	outline: none;
+	border: 0px;
+	margin-top: 10px;
 	padding-top: 12px;
 	padding-bottom: 12px;
 	text-align: center;
@@ -374,4 +401,33 @@ textarea {
 	font-weight: 500;
 }
 
+.fileupload {
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    background: #a23b3a;
+    padding: 5px 8px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 10pt;
+    color: #fff;
+}
 
+.fileupload input {
+    position: absolute;
+    top: 0;
+    right: 0; /* not left, because only the right part of the input seems to
+                 be clickable in some browser I can't remember */
+    cursor: pointer;
+    opacity: 0.0;
+    filter: alpha(opacity=0); /* and all the other old opacity stuff you
+                                 want to support */
+    font-size: 300px; /* wtf, but apparently the most reliable way to make
+                         a large part of the input clickable in most browsers */
+    height: 200px;
+}
+
+.gallery-question {
+	font-weight: 800;
+}
