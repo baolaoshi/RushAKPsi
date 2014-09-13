@@ -21,7 +21,7 @@
 				<tbody>
 					{% for rushee in rushees %}
 						<tr>
-							<td></td>
+							<td>{% if rushee.complete == true %}Yes!{% else %}No :({% endif %}</td>
 							<td><a href="/rushee/{{ rushee.id }}">{{ rushee.first_name }} {{ rushee.last_name }}</a></td>
 							<td>{{ rushee.grad_class}}</td>
 							<td>{{ rushee.major}}</td>
