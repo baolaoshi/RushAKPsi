@@ -31,10 +31,10 @@ def application_view(request, splash=False):
 		return HttpResponseRedirect("/gallery")
 		
 	data = {'DUE_DATE' : DUE_DATE_STR}
-
+	rushee = Rushee.objects.get(user=request.user)
 	if splash:
 		data['splash'] = True
-		rushee = Rushee.objects.get(user=request.user)
+		data['rushee'] = rushee
 		form = NewRusheeForm(initial={'first_name' : rushee.first_name, 
 									  'last_name' : rushee.last_name,
 									  'phone_num' : rushee.phone_num,
@@ -96,6 +96,7 @@ def application_view(request, splash=False):
 									  'q3' : rushee.q3,
 									  'q4' : rushee.q4})	
 	data["form"] = form
+	data['rushee'] = rushee
 	return render(request, 'application.html', data, context_instance=RequestContext(request))
 
 def login_view(request):
@@ -116,6 +117,10 @@ def login_view(request):
 				else: 
 					data['error'] = "Your email and password don't match!"
 					data['form'] = form
+			else: 
+				data['error'] = "Your email and password don't match!"
+				data['form'] = form
+				return render(request,'login.html', data, context_instance=RequestContext(request))
 	data['form'] = LoginForm()
 	return render(request,'login.html', data, context_instance=RequestContext(request))
 

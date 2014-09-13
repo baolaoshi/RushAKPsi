@@ -6,11 +6,13 @@ from django.template import RequestContext
 # Create your models here.
 
 class ContentTypeRestrictedFileField(models.FileField):
-	def __init__(self, *args, **kwargs):
-	    self.content_types = kwargs.pop("content_types")
-	    self.max_upload_size = kwargs.pop("max_upload_size")
+	def __init__(self, content_types=[], max_upload_size=26214400, *args, **kwargs):
+		# assert kwargs.get('content_types') is not None
+		# assert kwargs.get('max_upload_size') is not None
+		self.content_types = content_types
+		self.max_upload_size = max_upload_size
 
-	    super(ContentTypeRestrictedFileField, self).__init__(*args, **kwargs)
+		super(ContentTypeRestrictedFileField, self).__init__(*args, **kwargs)
 
 	def clean(self, *args, **kwargs):        
 	    data = super(ContentTypeRestrictedFileField, self).clean(*args, **kwargs)
@@ -39,7 +41,7 @@ class Rushee(models.Model):
 	gpa = models.CharField(max_length=100, blank=True, null=True)
 	picture = models.ImageField(upload_to="rushpics", blank=True, null=True)
 	resume = ContentTypeRestrictedFileField(upload_to="rushresumes", 
-		  								    content_types=['application/pdf'],
+		  								    content_types=['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
 											max_upload_size=26214400,
 											blank=True,
 											null=True)

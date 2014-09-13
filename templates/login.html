@@ -4,7 +4,7 @@
 {% block content %}
 <div class="row">
 	{% include "sidebar.html" %}
-	<div class="col-md-3 col-md-offset-1">
+	<div class="col-md-3 col-md-offset-2">
 		<div class="signup">
 			<span class="signup-title">
 				Rush
@@ -13,9 +13,9 @@
 				Alpha Kappa Psi
 			</span>
 			<div class="signup-area">
-				{% if form.errors %}
+				{% if error %}
 					<div class="signup-errors">
-						{{ form.errors }}
+						{{ error }}
 					</div>
 				{% endif %}
 				<div class="signup_form">

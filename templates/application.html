@@ -9,7 +9,7 @@
 <div class="app">
 	
 	{% include "sidebar.html" %}
-		<div class="col-md-6">
+		<div class="col-md-6 col-md-offset-1">
 			<div class="app-form">
 				{% if form.errors %}
 					<div class="app-dialogue-error">
@@ -40,9 +40,9 @@
 				        <div class="row">
 							<div class="col-md-4 col-md-offset-2">
 								{% if rushee.picture %}
-									<input  id="pic" type="image" src="/media/{{ rushee.picture }}" width="210"/>{{ form.picture }}
+									<img id="pic" src="/media/{{ rushee.picture }}" width="210"/>{{ form.picture }}
 								{% else %}
-									<input  id="pic" type="image" src="/static/images/Face.png" width="210"/>{{ form.picture }}
+									<img id="pic" src="/static/images/Face.png" width="210"/>{{ form.picture }}
 								{% endif %}
 								<script type="text/javascript">
 									function readURL(input) {
@@ -82,9 +82,36 @@
 												<br> -->
 												{{ field.label_tag }}
 												{{ field }}
+												<p id="counter{{ forloop.counter }}"></p>
 											{% endif %}
 				        				</div>
 				        			{% endfor %}
+				        			<script>
+				        			var maxLen = 1500;
+				        			var q1 = $("#id_q1");
+				        			var q2 = $("#id_q2");
+				        			var q3 = $("#id_q3");
+				        			var q4 = $("#id_q4");
+				        			var c1 = $("#counter1");
+				        			var c2 = $("#counter2");
+				        			var c3 = $("#counter3");
+				        			var c4 = $("#counter4");
+
+				        			function updateCounter(question, counter) {
+				        				console.log("HI");
+				        				var remLength = 0;
+				        				remLength = maxLen - parseInt(question.val().length);
+				        				if (remLength < 0) {
+				        					question.val() = question.val().substring(0, maxLen);
+				        					return false;
+				        				}
+				        				counter.text(remLength + " characters remaining");
+				        			}
+				        			q1.keypress(updateCounter(q1, c1));
+				        			q2.keypress(updateCounter(q2, c2));
+				        			q3.keypress(updateCounter(q3, c3));
+				        			q4.keypress(updateCounter(q4, c4));	
+				        			</script>
 				        		</div>
 				        	</div>
 		        		</div>
@@ -109,8 +136,7 @@
 				        				$( "input[name='resume']" ).change(function() {
 				        					pathName = $("input[name='resume']").val();
 				        					fileName = pathName.match(/[^\/\\]+$/);
-				        					parsedFileName = fileName.slice(11);
-				        				  	$(".resume-name").text(parsedFileName);
+				        				  	$(".resume-name").text(fileName);
 				        				});
 				        				if ($(".resume-name").text()){
 				        					trimmed = $.trim($(".resume-name").text());
