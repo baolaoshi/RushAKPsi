@@ -149,7 +149,7 @@ def signup_view(request):
 
 @user_passes_test(lambda u: u.is_superuser)
 def gallery_view(request):
-	data = {'DUE_DATE' : DUE_DATE_STR, 'questions' : form_questions}
+	data = {'DUE_DATE' : DUE_DATE_STR}
 	data['rushees'] = Rushee.objects.all()
 	return render(request, 'gallery.html', data)
 
