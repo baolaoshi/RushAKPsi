@@ -7,12 +7,29 @@
 <div class="col-md-6 col-md-offset-1">
 	<div class="app-form">
 		<div class="app-body">
-			<h2 class="text-center">Rushees</h2>
-			<ul>
-				{% for rushee in rushees %}
-				<li><a href="/rushee/{{ rushee.id }}">{{ rushee.first_name }} {{ rushee.last_name }}</a></li>
-				{% endfor %}
-			</ul>
+			<h2 class="text-center"> Rushees ({{rushees.count}}) </h2>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Complete?</th>
+						<th>Name</th>
+						<th>Year</th>
+						<th>Major</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for rushee in rushees %}
+						<tr>
+							<td></td>
+							<td><a href="/rushee/{{ rushee.id }}">{{ rushee.first_name }} {{ rushee.last_name }}</a></td>
+							<td>{{ rushee.grad_class}}</td>
+							<td>{{ rushee.major}}</td>
+							<td>{{ rushee.user.username}}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
